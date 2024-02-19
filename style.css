@@ -1,0 +1,167 @@
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  animation: backgroundAnimation 20s infinite alternate linear;
+}
+.text-btn {
+  position: relative;
+  background-color: #33ccff;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background: linear-gradient(45deg, #ff3366, #ffcc33, #33ccff, #33ffcc);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
+  }
+  100% {
+    background: linear-gradient(45deg, #ff3366, #ffcc33, #33ccff, #33ffcc);
+    background-size: 400% 400%;
+    background-position: 100% 50%;
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text {
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+  margin-left: 210px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.final-message {
+  font-size: 60px;
+  color: #130202;
+  text-align: center;
+  display: none;
+  animation: grow 2s ease-in-out forwards, sparkle 1s infinite alternate;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.heart {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #ff3366;
+  transform: rotate(45deg);
+  animation: heartAnimation 1s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes heartAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* CSS code for the background and balloon styles */
+#balloon-container {
+  background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);
+  height: 100vh;
+  padding: 1em;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  transition: opacity 500ms;
+}
+.balloon {
+  height: 125px;
+  width: 105px;
+  border-radius: 75% 75% 70% 70%;
+  position: relative;
+}
+.balloon:before {
+  content: '';
+  height: 75px;
+  width: 1px;
+  padding: 1px;
+  background-color: #fdfd96;
+  display: block;
+  position: absolute;
+  top: 125px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.balloon:after {
+  content: '▲';
+  text-align: center;
+  display: block;
+  position: absolute;
+  color: inherit;
+  top: 120px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-300vh);
+    opacity: 0;
+  }
+}
